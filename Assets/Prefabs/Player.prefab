@@ -15036,6 +15036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerData: {fileID: 11400000, guid: 28e556bbc6bd38e40b15c9ad060c0a96, type: 2}
+  lookRotation: {fileID: 1987520372069048034}
   _energy: 0
   _water: 0
 --- !u!54 &1292196986
