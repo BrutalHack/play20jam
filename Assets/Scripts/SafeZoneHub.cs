@@ -20,6 +20,10 @@ public class SafeZoneHub : MonoBehaviour, IInteractable
 
     [SerializeField] private SafeZoneData data = null;
 
+    [SerializeField] private Animator animator = null;
+
+    [SerializeField] private ShaderParameter activeParam = null; 
+    
     [SerializeField] private bool activated = false;
 
     public SafeZoneData Data => data;
@@ -28,6 +32,11 @@ public class SafeZoneHub : MonoBehaviour, IInteractable
     private PlayerController _playerController;
 
     private SafeZoneActivatedSignal _safeZoneActivatedSignal;
+
+    public InteractionType Type
+    {
+        get { return InteractionType.WaterIt; }
+    }
 
     private void Awake()
     {
@@ -65,6 +74,7 @@ public class SafeZoneHub : MonoBehaviour, IInteractable
     {
         forceField.gameObject.SetActive(active);
         safeZoneTrigger.SetActive(active);
+        animator.SetBool(activeParam.Name, active);
     }
 
     public bool Interact()

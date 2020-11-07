@@ -9833,7 +9833,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032113508}
   m_LocalRotation: {x: 0.23584093, y: 0.043341335, z: -0.010049992, w: 0.9707727}
-  m_LocalPosition: {x: 0, y: 1.861, z: 0.473}
+  m_LocalPosition: {x: 0, y: 3.075, z: 0.519}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1987520372069048034}
@@ -15012,6 +15012,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerData: {fileID: 11400000, guid: 28e556bbc6bd38e40b15c9ad060c0a96, type: 2}
   lookRotation: {fileID: 1987520372069048034}
+  _anim: {fileID: 1162481678}
+  _animWalking:
+    name: walking
+  _animHasWater:
+    name: water
+  _animStart:
+    name: start
+  _animDie:
+    name: die
+  _animPickup:
+    name: pickup
+  _animUseWater:
+    name: use_water
   _energy: 0
   _water: 0
 --- !u!54 &1292196986
