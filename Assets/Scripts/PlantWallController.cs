@@ -33,6 +33,8 @@ public class PlantWallController : MonoBehaviour, IInteractable
         Signals.Get(out _plantWallDestroyedSignal);
     }
 
+    public InteractionType Type => InteractionType.WaterIt;
+
     public bool Interact()
     {
         if (_playerController == null)

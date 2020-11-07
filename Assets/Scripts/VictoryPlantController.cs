@@ -33,6 +33,9 @@ public class VictoryPlantController : MonoBehaviour, IInteractable
         Signals.Get(out _victorySignal);
     }
 
+
+    public InteractionType Type => InteractionType.WaterIt;
+
     public bool Interact()
     {
         if (_playerController == null)
