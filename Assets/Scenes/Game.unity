@@ -398,6 +398,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8683401288489704547, guid: fe19ea779f6d6394484b4a904ae70cb2, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 3895
+      objectReference: {fileID: 0}
     - target: {fileID: 8683401288489704548, guid: fe19ea779f6d6394484b4a904ae70cb2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1266,10 +1270,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4310494441351253687, guid: 4e8215516898e4b23af55e566dca45fb, type: 3}
-      propertyPath: activated
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8677036491545435684, guid: 4e8215516898e4b23af55e566dca45fb, type: 3}
       propertyPath: m_Name
       value: Grid
