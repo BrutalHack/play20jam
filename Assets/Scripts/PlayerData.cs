@@ -23,7 +23,7 @@ public class PlayerData: ScriptableObject
 	private float maxWater = 5f;
 	
 	[SerializeField]
-	private float startWater = 0f;
+	private int startWater = 0;
 
 	[SerializeField]
 	private float energyLossInFog = 0.05f;
@@ -40,7 +40,7 @@ public class PlayerData: ScriptableObject
 
 	public float MaxWater => maxWater;
 
-	public float StartWater => startWater;
+	public int StartWater => startWater;
 
 	public float EnergyLossInFog => energyLossInFog;
 
