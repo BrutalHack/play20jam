@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LitSprite
-  m_Shader: {fileID: 4800000, guid: b77e51f117177954ea863bdb422344fb, type: 3}
+  m_Name: LitSpriteOpaque
+  m_Shader: {fileID: -6465566751694194690, guid: 2170ac5a650d21f45b32cfb8d8d0fd8b, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _ALPHATEST_ON _STRAIGHT_ALPHA_INPUT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -74,6 +74,7 @@ Material:
     - _Glossiness: 0
     - _GlossinessSource: 0
     - _GlossyReflections: 0
+    - _Metalic: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _QueueOffset: 0
