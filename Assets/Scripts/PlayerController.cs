@@ -6,15 +6,17 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Vector2 _moveVector;
     [SerializeField] private float _moveSpeed;
+    private Rigidbody _rigidbody;
 
     private void Update()
     {
-        if (_moveVector != Vector2.zero)
-        {
-            var moveDelta = _moveVector * (_moveSpeed * Time.deltaTime);
-            var transformComponent = transform;
-            transformComponent.position += new Vector3(moveDelta.x, 0, moveDelta.y);
-        }
+        var moveDelta = _moveVector * (_moveSpeed * Time.deltaTime);
+        _rigidbody.velocity += new Vector3(moveDelta.x, 0, moveDelta.y);
+    }
+
+    private void Start()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
