@@ -40,7 +40,7 @@ public class SafeZoneHub : MonoBehaviour, IInteractable
 
     private void Awake()
     {
-        _playerController = GameObject.FindWithTag(UnityTags.Player).GetComponent<PlayerController>();
+        _playerController = PlayerController.Instance;
         forceField.endRange = data.Size;
         safeZoneTrigger.Initialize(this);
         safeZoneTrigger.SetRadius(data.Size);
@@ -84,17 +84,15 @@ public class SafeZoneHub : MonoBehaviour, IInteractable
             return false;
         }
 
-        if (_playerController.HasWater)
+        if (!_playerController.HasWater)
         {
-            _playerController.RemoveWater();
-            _safeZoneActivatedSignal.Dispatch();
-            SetHubActive(true);
-            return true;
-        }
-        else
-        {
-            //TODO No Water?
+            //TODO No Water to interact?
             return false;
         }
+
+        _playerController.RemoveWater();
+        _safeZoneActivatedSignal.Dispatch();
+        SetHubActive(true);
+        return true;
     }
 }

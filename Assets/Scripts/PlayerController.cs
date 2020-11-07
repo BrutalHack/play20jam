@@ -1,11 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using JetBrains.Annotations;
 using Supyrb;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem FogLow;
+    [SerializeField] private ParticleSystem FogMid;
+    [SerializeField] private ParticleSystem FogTop;
     [SerializeField] private PlayerData _playerData = null;
     [SerializeField] private Transform lookRotation = null;
 
@@ -30,8 +36,25 @@ public class PlayerController : MonoBehaviour
     private PlayerExitSafeZoneSignal _exitSafeZoneSignal;
     private PlayerEnergyLevelChangedSignal _playerEnergyLevelChangedSignal;
     private PlayerDiedSignal _playerDiedSignal;
+    private VictorySignal _victorySignal;
     private WaterCollectedSignal _waterCollectedSignal;
     private List<IInteractable> _interactables = new List<IInteractable>();
+    private bool _isVictoryState;
+    private bool _isGameOverState;
+    private static PlayerController _instance;
+
+    public static PlayerController Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = GameObject.FindWithTag(UnityTags.Player).GetComponent<PlayerController>();
+            }
+
+            return _instance;
+        }
+    }
 
     public bool HasWater => _water == 1;
 
@@ -42,6 +65,7 @@ public class PlayerController : MonoBehaviour
         Signals.Get(out _enterSafeZoneSignal);
         Signals.Get(out _exitSafeZoneSignal);
         Signals.Get(out _playerDiedSignal);
+        Signals.Get(out _victorySignal);
         Signals.Get(out _playerEnergyLevelChangedSignal);
         Signals.Get(out _waterCollectedSignal);
         
@@ -49,6 +73,7 @@ public class PlayerController : MonoBehaviour
         _exitSafeZoneSignal.AddListener(OnExitSafeZone);
         _playerEnergyLevelChangedSignal.AddListener(OnEnergyLevelChanged);
         _playerDiedSignal.AddListener(OnPlayerDied);
+        _victorySignal.AddListener(OnVictory);
         _waterCollectedSignal.AddListener(OnWaterCollected);
     }
 
@@ -118,7 +143,7 @@ public class PlayerController : MonoBehaviour
     {
         var newEnergyLevel = Mathf.Min(_energy + _surroundingEnergy * _energyChangeMultiplier * Time.deltaTime,
             _playerData.MaxEnergy);
-        if (newEnergyLevel == _energy)
+        if (Math.Abs(newEnergyLevel - _energy) < float.Epsilon)
         {
             return;
         }
@@ -137,6 +162,7 @@ public class PlayerController : MonoBehaviour
         _rigidbody.velocity += new Vector3(moveDelta.x, 0, moveDelta.y);
     }
 
+    [UsedImplicitly]
     public void OnMove(InputAction.CallbackContext context)
     {
         if (context.started)
@@ -147,6 +173,7 @@ public class PlayerController : MonoBehaviour
         _moveVector = context.ReadValue<Vector2>();
     }
 
+    [UsedImplicitly]
     public void OnAction(InputAction.CallbackContext context)
     {
         if (!context.started)
@@ -154,10 +181,19 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        if (_isVictoryState)
+        {
+            SceneManager.LoadScene(UnitySceneIndices.Menu);
+        }
+        else if (_isGameOverState)
+        {
+            SceneManager.LoadScene(UnitySceneIndices.Game);
+        }
+
         Interact();
-        Debug.Log("Action Action Pressed");
     }
 
+    [UsedImplicitly]
     public void OnMenu(InputAction.CallbackContext context)
     {
         if (!context.started)
@@ -165,7 +201,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        Debug.Log("Menu Action Pressed");
+        SceneManager.LoadScene(UnitySceneIndices.Menu);
     }
 
 
@@ -194,7 +230,22 @@ public class PlayerController : MonoBehaviour
     {
         _anim.SetTrigger(_animDie.Name);
         _isAlive = false;
+        _isGameOverState = true;
         _energy = 0.0f;
+    }
+
+    private void OnVictory()
+    {
+        _isAlive = false;
+        _isVictoryState = true;
+        StopFog();
+    }
+
+    private void StopFog()
+    {
+        FogLow.Stop();
+        FogMid.Stop();
+        // FogTop.Stop();
     }
 
     private void Interact()

@@ -2,16 +2,11 @@ using System;
 using Supyrb;
 using UnityEngine;
 
-public class WaterController : MonoBehaviour, IInteractable
+public class PlantWallController : MonoBehaviour, IInteractable
 {
-    private WaterCollectedSignal _waterCollectedSignal;
+    private PlantWallDestroyedSignal _plantWallDestroyedSignal;
     private PlayerController _playerController;
 
-    public InteractionType Type
-    {
-        get { return InteractionType.PickUp; }
-    }
-    
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag(UnityTags.Player))
@@ -35,7 +30,7 @@ public class WaterController : MonoBehaviour, IInteractable
     private void Start()
     {
         _playerController = PlayerController.Instance;
-        Signals.Get(out _waterCollectedSignal);
+        Signals.Get(out _plantWallDestroyedSignal);
     }
 
     public bool Interact()
@@ -44,8 +39,15 @@ public class WaterController : MonoBehaviour, IInteractable
         {
             return false;
         }
-        
-        _waterCollectedSignal.Dispatch();
+
+        if (!_playerController.HasWater)
+        {
+            //TODO No Water to interact?
+            return false;
+        }
+
+        _playerController.RemoveWater();
+        _plantWallDestroyedSignal.Dispatch();
         gameObject.SetActive(false);
         return true;
     }

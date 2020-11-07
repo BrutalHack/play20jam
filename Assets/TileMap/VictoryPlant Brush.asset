@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d5751a2c961df945a34295ccf5e576d, type: 3}
-  m_Name: Collider Brush
+  m_Name: VictoryPlant Brush
   m_EditorClassIdentifier: 
   m_Cells:
   - m_Tile: {fileID: 0}
@@ -36,4 +36,4 @@ MonoBehaviour:
   m_Pivot: {x: 0, y: 0, z: 0}
   m_CanChangeZPosition: 0
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Prefab: {fileID: 4487680668123085193, guid: 75e9a29e388884f99af169da3773a788, type: 3}
+  m_Prefab: {fileID: 8624457119052417841, guid: 2ec532f64f36b481aa7465f296713e3f, type: 3}
