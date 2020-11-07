@@ -22,9 +22,14 @@ public class SafeZoneData: ScriptableObject
 	[SerializeField]
 	private float requiredWater = 0.4f;
 
+	[SerializeField]
+	private float emittingEnergy = 0.3f;
+	
 	public float Size => size;
 
 	public float StartEnergy => startEnergy;
 
 	public float RequiredWater => requiredWater;
+
+	public float EmittingEnergy => emittingEnergy;
 }

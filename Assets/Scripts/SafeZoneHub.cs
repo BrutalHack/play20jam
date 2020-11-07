@@ -17,16 +17,23 @@ public class SafeZoneHub: MonoBehaviour
     private ParticleSystemForceField forceField = null;
 
     [SerializeField]
+    private SafeZoneTrigger safeZoneTrigger = null;
+    
+    [SerializeField]
     private SafeZoneData data = null;
 
     [SerializeField]
     private bool activated = false;
+
+    public SafeZoneData Data => data;
 
     private float engeryLeft;
 
     private void Awake()
     {
         forceField.endRange = data.Size;
+        safeZoneTrigger.Initialize(this);
+        safeZoneTrigger.SetRadius(data.Size);
         engeryLeft = data.StartEnergy;
     }
 
@@ -38,5 +45,6 @@ public class SafeZoneHub: MonoBehaviour
     private void SetHubActive(bool active)
     {
         forceField.gameObject.SetActive(active);
+        safeZoneTrigger.SetActive(active);
     }
 }

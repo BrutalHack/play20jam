@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   movementSpeed: 50
-  startEnergy: 1
+  maxEnergy: 1
+  maxWater: 5
   startWater: 0
+  energyLossInFog: 0.05
+  criticalEnergyThreshold: 0.3
+  criticalEnergyLossMultiplier: 0.7

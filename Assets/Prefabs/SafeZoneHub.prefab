@@ -92,6 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2550618321590338918}
   - component: {fileID: 8462077882086509789}
+  - component: {fileID: 8817514943120740605}
   m_Layer: 8
   m_Name: SafeZone
   m_TagString: Untagged
@@ -126,6 +127,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8817514943120740605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7143382395453939146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dfa29de84a7410b8537bae71da2a858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &8434672669173120035
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,5 +715,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceField: {fileID: 8434672669173120061}
+  safeZoneTrigger: {fileID: 8817514943120740605}
   data: {fileID: 11400000, guid: bf384c1d745201540bdaa008de89e07f, type: 2}
   activated: 0
