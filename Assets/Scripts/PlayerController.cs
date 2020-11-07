@@ -9,6 +9,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerData _playerData = null;
     [SerializeField] private Transform lookRotation = null;
 
+    [SerializeField] private Animator _anim = null;
+    [SerializeField] private ShaderParameter _animWalking = null;
+    [SerializeField] private ShaderParameter _animHasWater = null;
+    [SerializeField] private ShaderParameter _animStart = null;
+    [SerializeField] private ShaderParameter _animDie = null;
+    [SerializeField] private ShaderParameter _animPickup = null;
+    [SerializeField] private ShaderParameter _animUseWater = null;
+
     [SerializeField] private float _energy;
     [SerializeField] private int _water;
     private Vector2 _moveVector;
@@ -36,7 +44,7 @@ public class PlayerController : MonoBehaviour
         Signals.Get(out _playerDiedSignal);
         Signals.Get(out _playerEnergyLevelChangedSignal);
         Signals.Get(out _waterCollectedSignal);
-
+        
         _enterSafeZoneSignal.AddListener(OnEnterSafeZone);
         _exitSafeZoneSignal.AddListener(OnExitSafeZone);
         _playerEnergyLevelChangedSignal.AddListener(OnEnergyLevelChanged);
@@ -46,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnWaterCollected()
     {
-        //TODO send animation event
+        _anim.SetBool(_animHasWater.Name, true);
         _water = 1;
     }
 
@@ -76,8 +84,19 @@ public class PlayerController : MonoBehaviour
 
         forward.x = _moveVector.x;
         forward.z = _moveVector.y;
-        if (forward.sqrMagnitude > 0.1f)
+
+        var isWalking = forward.sqrMagnitude > 0.05f;
+        
+        // TODO Why is the hash not working???
+        _anim.SetBool(_animWalking.Name, isWalking);
+        
+        if (isWalking)
         {
+            // Flip if appropriate
+            var scale = _anim.transform.localScale;
+            scale.x = Mathf.Sign(forward.x + scale.x * 0.01f);
+            _anim.transform.localScale = scale;
+            
             var targetRotation = Quaternion.LookRotation(forward);
             lookRotation.rotation = Quaternion.RotateTowards(lookRotation.rotation, targetRotation,
                 _playerData.LightRotationSpeed * Time.deltaTime);
@@ -173,6 +192,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnPlayerDied()
     {
+        _anim.SetTrigger(_animDie.Name);
         _isAlive = false;
         _energy = 0.0f;
     }
@@ -185,6 +205,17 @@ public class PlayerController : MonoBehaviour
             if (interactable.Interact())
             {
                 interactedObjects.Add(interactable);
+                switch (interactable.Type)
+                {
+                    case InteractionType.PickUp:
+                        _anim.SetTrigger(_animPickup.Name);
+                        break;
+                    case InteractionType.WaterIt:
+                        _anim.SetTrigger(_animUseWater.Name);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
             }
         }
 
@@ -206,6 +237,7 @@ public class PlayerController : MonoBehaviour
 
     public void RemoveWater()
     {
+        _anim.SetBool(_animHasWater.Name, false);
         _water = 0;
     }
 }

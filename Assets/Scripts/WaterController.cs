@@ -7,6 +7,11 @@ public class WaterController : MonoBehaviour, IInteractable
     private WaterCollectedSignal _waterCollectedSignal;
     private PlayerController _playerController;
 
+    public InteractionType Type
+    {
+        get { return InteractionType.PickUp; }
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag(UnityTags.Player))
