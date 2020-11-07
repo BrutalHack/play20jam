@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{66e80d3c-0648-438e-ab29-bf5e800f2484}">
+		<property name="assetPath">
+			<value>Play 20_LOOP_KEYS.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>64</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d426b360-28f8-42b8-a998-fb72eefea2ae}</destination>
+		</relationship>
+	</object>
+</objects>
