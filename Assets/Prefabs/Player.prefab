@@ -5749,8 +5749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8fed778b5d348b7af51cb396bbdae28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveVector: {x: 0, y: 0}
-  _moveSpeed: 50
+  _playerData: {fileID: 11400000, guid: 28e556bbc6bd38e40b15c9ad060c0a96, type: 2}
 --- !u!54 &1292196986
 Rigidbody:
   m_ObjectHideFlags: 0
