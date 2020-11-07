@@ -4,13 +4,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Vector2 _moveVector;
-    [SerializeField] private float _moveSpeed;
+    [SerializeField] private PlayerData _playerData = null;
+    private Vector2 _moveVector;
     private Rigidbody _rigidbody;
 
-    private void Update()
+    private void FixedUpdate()
     {
-        var moveDelta = _moveVector * (_moveSpeed * Time.deltaTime);
+        var moveDelta = _moveVector * (_playerData.MovementSpeed * Time.deltaTime);
         _rigidbody.velocity += new Vector3(moveDelta.x, 0, moveDelta.y);
     }
 
@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        Interact();
         Debug.Log("Action Action Pressed");
     }
 
@@ -47,5 +48,10 @@ public class PlayerController : MonoBehaviour
         }
 
         Debug.Log("Menu Action Pressed");
+    }
+    
+    private void Interact()
+    {
+        
     }
 }
