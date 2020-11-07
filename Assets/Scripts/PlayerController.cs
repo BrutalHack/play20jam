@@ -1,23 +1,50 @@
+using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace UnityTemplateProjects
+public class PlayerController : MonoBehaviour
 {
-    public class PlayerController : MonoBehaviour
+    [SerializeField] private Vector2 _moveVector;
+    [SerializeField] private float _moveSpeed;
+
+    private void Update()
     {
-        public void OnMove(InputAction.CallbackContext context)
+        if (_moveVector != Vector2.zero)
         {
-            Debug.Log("Move" + context);
+            var moveDelta = _moveVector * (_moveSpeed * Time.deltaTime);
+            var transformComponent = transform;
+            transformComponent.position += new Vector3(moveDelta.x, 0, moveDelta.y);
+        }
+    }
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            return;
         }
 
-        public void OnAction(InputAction.CallbackContext context)
+        _moveVector = context.ReadValue<Vector2>();
+    }
+
+    public void OnAction(InputAction.CallbackContext context)
+    {
+        if (!context.started)
         {
-            Debug.Log("Action + " + context.phase);
+            return;
         }
 
-        public void OnMenu(InputAction.CallbackContext context)
+        Debug.Log("Action Action Pressed");
+    }
+
+    public void OnMenu(InputAction.CallbackContext context)
+    {
+        if (!context.started)
         {
-            //TODO Menu
+            return;
         }
+
+        Debug.Log("Menu Action Pressed");
     }
 }

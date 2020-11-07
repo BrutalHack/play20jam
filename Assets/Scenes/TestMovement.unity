@@ -423,13 +423,13 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1292196979}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1292196985}
+        m_TargetAssemblyTypeName: UnityTemplateProjects.PlayerController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -438,7 +438,19 @@ MonoBehaviour:
     m_ActionId: ce71d17f-c7a8-453b-acfa-4d39bc8c825b
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1292196985}
+        m_TargetAssemblyTypeName: UnityTemplateProjects.PlayerController, Assembly-CSharp
+        m_MethodName: OnAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 119b4724-7718-4154-8abf-7e0daf81876e
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -482,7 +494,19 @@ MonoBehaviour:
     m_ActionId: a370201a-24b6-4a8a-93ec-a52f2c3c82e9
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1292196985}
+        m_TargetAssemblyTypeName: UnityTemplateProjects.PlayerController, Assembly-CSharp
+        m_MethodName: OnMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 987d72d6-8370-48dc-b7b3-673e9f2f0afa
     m_ActionName: Player/Menu[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
@@ -502,6 +526,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8fed778b5d348b7af51cb396bbdae28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveVector: {x: 0, y: 0}
+  _moveSpeed: 10
 --- !u!1 &1549868623
 GameObject:
   m_ObjectHideFlags: 0
