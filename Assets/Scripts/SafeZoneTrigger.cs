@@ -8,73 +8,73 @@
 // </author>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System;
 using Supyrb;
 using UnityEngine;
 
-public class SafeZoneTrigger: MonoBehaviour
+public class SafeZoneTrigger : MonoBehaviour
 {
-	[SerializeField]
-	private LayerMask playerLayerMask = new LayerMask();
-    
-	private SafeZoneHub parent;
-	private SphereCollider sphereCollider;
-	private bool playerInside;
+    [SerializeField] private LayerMask playerLayerMask;
 
-	private PlayerEnteredSafeZoneSignal playerEnteredSafeZoneSignal;
-	private PlayerExitSafeZoneSignal playerExitSafeZoneSignal;
-    
+    private SafeZoneHub _parent;
+    private SphereCollider _sphereCollider;
+    private bool _playerInside;
 
-	public void Initialize(SafeZoneHub safeZoneHub)
-	{
-		sphereCollider = GetComponent<SphereCollider>();
-		parent = safeZoneHub;
+    private PlayerEnteredSafeZoneSignal _playerEnteredSafeZoneSignal;
+    private PlayerExitSafeZoneSignal _playerExitSafeZoneSignal;
 
-		Signals.Get(out playerEnteredSafeZoneSignal);
-		Signals.Get(out playerExitSafeZoneSignal);
-	}
 
-	private void OnTriggerEnter(Collider other)
-	{
-		playerEnteredSafeZoneSignal.Dispatch(parent);
-		playerInside = true;
-	}
-    
-	private void OnTriggerExit(Collider other)
-	{
-		playerExitSafeZoneSignal.Dispatch(parent);
-		playerInside = false;
-	}
+    public void Initialize(SafeZoneHub safeZoneHub)
+    {
+        _sphereCollider = GetComponent<SphereCollider>();
+        _parent = safeZoneHub;
 
-	public void SetRadius(float radius)
-	{
-		sphereCollider.radius = radius;
-	}
+        Signals.Get(out _playerEnteredSafeZoneSignal);
+        Signals.Get(out _playerExitSafeZoneSignal);
+    }
 
-	public void SetActive(bool active)
-	{
-		if (active)
-		{
-			SphereCastForPlayer();
-		}
-		else
-		{
-			if (playerInside)
-			{
-				playerExitSafeZoneSignal.Dispatch(parent);
-				playerInside = false;
-			}
-		}
-		sphereCollider.enabled = active;
-        
-	}
+    private void OnTriggerEnter(Collider other)
+    {
+        _playerEnteredSafeZoneSignal.Dispatch(_parent);
+        _playerInside = true;
+    }
 
-	private void SphereCastForPlayer()
-	{
-		var inside = Physics.CheckSphere(transform.position, sphereCollider.radius, playerLayerMask);
-		if (inside)
-		{
-			playerEnteredSafeZoneSignal.Dispatch(parent);
-			playerInside = true;
-		}
-	}
+    private void OnTriggerExit(Collider other)
+    {
+        _playerExitSafeZoneSignal.Dispatch(_parent);
+        _playerInside = false;
+    }
+
+    public void SetRadius(float radius)
+    {
+        _sphereCollider.radius = radius;
+    }
+
+    public void SetActive(bool active)
+    {
+        if (active)
+        {
+            SphereCastForPlayer();
+        }
+        else
+        {
+            if (_playerInside)
+            {
+                _playerExitSafeZoneSignal.Dispatch(_parent);
+                _playerInside = false;
+            }
+        }
+
+        _sphereCollider.enabled = active;
+    }
+
+    private void SphereCastForPlayer()
+    {
+        var inside = Physics.CheckSphere(transform.position, _sphereCollider.radius, playerLayerMask);
+        if (inside)
+        {
+            _playerEnteredSafeZoneSignal.Dispatch(_parent);
+            _playerInside = true;
+        }
+    }
 }

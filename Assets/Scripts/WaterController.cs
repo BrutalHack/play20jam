@@ -14,7 +14,7 @@ public class WaterController : MonoBehaviour, IInteractable
             return;
         }
 
-        _playerController.SetInteractable(this);
+        _playerController.AddInteractable(this);
     }
 
     private void OnTriggerExit(Collider other)
@@ -33,16 +33,15 @@ public class WaterController : MonoBehaviour, IInteractable
         Signals.Get(out _waterCollectedSignal);
     }
 
-    public void Interact()
+    public bool Interact()
     {
         if (_playerController == null)
         {
-            return;
+            return false;
         }
-
-        _playerController.RemoveInteractable(this);
-
+        
         _waterCollectedSignal.Dispatch();
         gameObject.SetActive(false);
+        return true;
     }
 }

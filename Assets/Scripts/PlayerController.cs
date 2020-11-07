@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Supyrb;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -22,7 +23,9 @@ public class PlayerController : MonoBehaviour
     private PlayerEnergyLevelChangedSignal _playerEnergyLevelChangedSignal;
     private PlayerDiedSignal _playerDiedSignal;
     private WaterCollectedSignal _waterCollectedSignal;
-    private IInteractable _interactable;
+    private List<IInteractable> _interactables = new List<IInteractable>();
+
+    public bool HasWater => _water == 1;
 
     private void Awake()
     {
@@ -70,14 +73,15 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        
+
         forward.x = _moveVector.x;
         forward.z = _moveVector.y;
         if (forward.sqrMagnitude > 0.1f)
         {
             var targetRotation = Quaternion.LookRotation(forward);
-            lookRotation.rotation = Quaternion.RotateTowards(lookRotation.rotation, targetRotation, _playerData.LightRotationSpeed * Time.deltaTime);
-        } 
+            lookRotation.rotation = Quaternion.RotateTowards(lookRotation.rotation, targetRotation,
+                _playerData.LightRotationSpeed * Time.deltaTime);
+        }
     }
 
     private void FixedUpdate()
@@ -93,7 +97,8 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateEnergy()
     {
-        var newEnergyLevel = Mathf.Min(_energy + _surroundingEnergy * _energyChangeMultiplier * Time.deltaTime, _playerData.MaxEnergy);
+        var newEnergyLevel = Mathf.Min(_energy + _surroundingEnergy * _energyChangeMultiplier * Time.deltaTime,
+            _playerData.MaxEnergy);
         if (newEnergyLevel == _energy)
         {
             return;
@@ -174,23 +179,33 @@ public class PlayerController : MonoBehaviour
 
     private void Interact()
     {
-        _interactable?.Interact();
+        var interactedObjects = new List<IInteractable>();
+        foreach (var interactable in _interactables)
+        {
+            if (interactable.Interact())
+            {
+                interactedObjects.Add(interactable);
+            }
+        }
+
+        _interactables.RemoveAll(interactedObjects.Contains);
     }
 
-    public void SetInteractable(IInteractable otherInteractable)
+    public void AddInteractable(IInteractable otherInteractable)
     {
-        _interactable = otherInteractable;
+        _interactables.Add(otherInteractable);
     }
 
     public void RemoveInteractable(IInteractable otherInteractable)
     {
-        if (_interactable == otherInteractable)
+        if (!_interactables.Remove(otherInteractable))
         {
-            _interactable = null;
+            Debug.Log($"Tried to remove {otherInteractable}, but was not registered.");
         }
-        else
-        {
-            Debug.Log($"Tried to remove {otherInteractable}, but current interactable is {_interactable}");
-        }
+    }
+
+    public void RemoveWater()
+    {
+        _water = 0;
     }
 }
