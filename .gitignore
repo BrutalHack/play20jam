@@ -53,3 +53,15 @@ report.xml
 /Assets/Temp.meta
 /Logs
 /Assets/Plugins/Sirenix*
+
+# FMOD
+/Assets/Plugins/FMOD/Cache/**
+/Assets/Plugins/FMOD/Cache.meta
+fmod.log
+fmod_editor.log
+
+# FMOD studio (In folder FMOD)
+/FMOD/**.user
+/FMOD/**.unsaved
+/FMOD/**.cache
+/FMOD/**.restore
