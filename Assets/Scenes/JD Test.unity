@@ -172,7 +172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5339533303903999214, guid: 802e2691753f84791a35cf78a8677605, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5339533303903999214, guid: 802e2691753f84791a35cf78a8677605, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -234,7 +234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5828833748432533453, guid: 2ae63f15694aa054cac0ce14d93a126e, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5828833748432533453, guid: 2ae63f15694aa054cac0ce14d93a126e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -291,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8683401288489704548, guid: fe19ea779f6d6394484b4a904ae70cb2, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8683401288489704548, guid: fe19ea779f6d6394484b4a904ae70cb2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -527,7 +527,7 @@ Transform:
   m_Children:
   - {fileID: 945687462}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 14.817, y: -23.47, z: 0}
 --- !u!1001 &1469159001
 PrefabInstance:
@@ -570,7 +570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8677036491545435690, guid: 4e8215516898e4b23af55e566dca45fb, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8677036491545435690, guid: 4e8215516898e4b23af55e566dca45fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -628,7 +628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3347748041071110821, guid: a5159d244af0e6141a5e89d2a0accd8e, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3347748041071110821, guid: a5159d244af0e6141a5e89d2a0accd8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
