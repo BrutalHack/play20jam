@@ -17,6 +17,9 @@ public class PlayerData: ScriptableObject
 	private float movementSpeed = 50;
 
 	[SerializeField]
+	private float lightRotationSpeed = 360f;
+
+	[SerializeField]
 	private float maxEnergy = 1f;
 
 	[SerializeField]
@@ -35,6 +38,8 @@ public class PlayerData: ScriptableObject
 	private float criticalEnergyLossMultiplier = 0.7f;
 	
 	public float MovementSpeed => movementSpeed;
+
+	public float LightRotationSpeed => lightRotationSpeed;
 
 	public float MaxEnergy => maxEnergy;
 

@@ -6,10 +6,12 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerData _playerData = null;
-
+    [SerializeField] private Transform lookRotation = null;
+    
     private float _energy;
     private float _water;
     private Vector2 _moveVector;
+    private Vector3 forward = Vector3.forward;
     private Rigidbody _rigidbody;
 
     private float _surroundingEnergy;
@@ -51,20 +53,36 @@ public class PlayerController : MonoBehaviour
         _playerDiedSignal.RemoveListener(OnPlayerDied);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (!_isAlive)
         {
             return;
         }
         
+        forward.x = _moveVector.x;
+        forward.z = _moveVector.y;
+        if (forward.sqrMagnitude > 0.1f)
+        {
+            var targetRotation = Quaternion.LookRotation(forward);
+            lookRotation.rotation = Quaternion.RotateTowards(lookRotation.rotation, targetRotation, _playerData.LightRotationSpeed * Time.deltaTime);
+        } 
+    }
+
+    private void FixedUpdate()
+    {
+        if (!_isAlive)
+        {
+            return;
+        }
+
         UpdateEnergy();
         UpdateMovement();
     }
 
     private void UpdateEnergy()
     {
-        var newEnergyLevel = Mathf.Min(_energy + _surroundingEnergy * Time.deltaTime, _playerData.MaxEnergy);
+        var newEnergyLevel = Mathf.Min(_energy + _surroundingEnergy * _energyChangeMultiplier * Time.deltaTime, _playerData.MaxEnergy);
         if (newEnergyLevel == _energy)
         {
             return;
