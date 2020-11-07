@@ -5575,8 +5575,9 @@ GameObject:
   - component: {fileID: 1162481677}
   - component: {fileID: 1162481676}
   - component: {fileID: 1162481675}
+  - component: {fileID: 1162481678}
   m_Layer: 0
-  m_Name: New SkeletonAnimation
+  m_Name: Player_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5608,8 +5609,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 2e4e11d4dd87d844a876d18c4d76a612, type: 2}
-  initialSkinName: goblin
+  skeletonDataAsset: {fileID: 11400000, guid: 8f77986e85c41e241b4a5c478960d056, type: 2}
+  initialSkinName: down
   initialFlipX: 0
   initialFlipY: 0
   updateMode: 3
@@ -5623,7 +5624,7 @@ MonoBehaviour:
   tintBlack: 0
   singleSubmesh: 0
   fixDrawOrder: 0
-  addNormals: 0
+  addNormals: 1
   calculateTangents: 0
   maskInteraction: 0
   maskMaterials:
@@ -5631,7 +5632,7 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
-  _animationName: walk
+  _animationName: idle_front
   loop: 1
   timeScale: 1
 --- !u!23 &1162481676
@@ -5653,7 +5654,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 54091ef934c41eb4192f72bfd8e3bcc9, type: 2}
+  - {fileID: 2100000, guid: ccf6b7e144176d143a593e4610941191, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5683,6 +5684,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162481673}
   m_Mesh: {fileID: 0}
+--- !u!95 &1162481678
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162481673}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5b3d55a6038faa84fad21d8a0fea9f4e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1185791849
 GameObject:
   m_ObjectHideFlags: 0
