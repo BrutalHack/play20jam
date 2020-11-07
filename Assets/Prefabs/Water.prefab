@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5912689612353147785}
   - component: {fileID: 5912689612353147784}
-  m_Layer: 0
-  m_Name: New Sprite
+  m_Layer: 10
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 5912689613150185023}
   - component: {fileID: 5912689613150185020}
   - component: {fileID: 5912689613150185021}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
