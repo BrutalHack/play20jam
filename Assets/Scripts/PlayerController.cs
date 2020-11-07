@@ -7,9 +7,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerData _playerData = null;
     [SerializeField] private Transform lookRotation = null;
-    
-    private float _energy;
-    private float _water;
+
+    [SerializeField] private float _energy;
+    [SerializeField] private int _water;
     private Vector2 _moveVector;
     private Vector3 forward = Vector3.forward;
     private Rigidbody _rigidbody;
@@ -21,20 +21,30 @@ public class PlayerController : MonoBehaviour
     private PlayerExitSafeZoneSignal _exitSafeZoneSignal;
     private PlayerEnergyLevelChangedSignal _playerEnergyLevelChangedSignal;
     private PlayerDiedSignal _playerDiedSignal;
+    private WaterCollectedSignal _waterCollectedSignal;
+    private IInteractable _interactable;
 
     private void Awake()
     {
         _surroundingEnergy = _playerData.EnergyLossInFog;
-        
+
         Signals.Get(out _enterSafeZoneSignal);
         Signals.Get(out _exitSafeZoneSignal);
         Signals.Get(out _playerDiedSignal);
         Signals.Get(out _playerEnergyLevelChangedSignal);
-        
+        Signals.Get(out _waterCollectedSignal);
+
         _enterSafeZoneSignal.AddListener(OnEnterSafeZone);
         _exitSafeZoneSignal.AddListener(OnExitSafeZone);
         _playerEnergyLevelChangedSignal.AddListener(OnEnergyLevelChanged);
         _playerDiedSignal.AddListener(OnPlayerDied);
+        _waterCollectedSignal.AddListener(OnWaterCollected);
+    }
+
+    private void OnWaterCollected()
+    {
+        //TODO send animation event
+        _water = 1;
     }
 
     private void Start()
@@ -51,6 +61,7 @@ public class PlayerController : MonoBehaviour
         _exitSafeZoneSignal.RemoveListener(OnExitSafeZone);
         _playerEnergyLevelChangedSignal.RemoveListener(OnEnergyLevelChanged);
         _playerDiedSignal.RemoveListener(OnPlayerDied);
+        _waterCollectedSignal.RemoveListener(OnWaterCollected);
     }
 
     private void Update()
@@ -87,8 +98,9 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
         _playerEnergyLevelChangedSignal.Dispatch(newEnergyLevel);
-        
+
         if (newEnergyLevel <= 0.0f)
         {
             _playerDiedSignal.Dispatch();
@@ -131,8 +143,8 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log("Menu Action Pressed");
     }
-    
-    
+
+
     private void OnEnterSafeZone(SafeZoneHub hub)
     {
         _surroundingEnergy = hub.Data.EmittingEnergy;
@@ -144,22 +156,41 @@ public class PlayerController : MonoBehaviour
         _surroundingEnergy = -_playerData.EnergyLossInFog;
         Debug.Log("Exit safe zone");
     }
-    
+
     private void OnEnergyLevelChanged(float newLevel)
     {
         _energy = newLevel;
 
-        _energyChangeMultiplier = (_energy <= _playerData.CriticalEnergyThreshold) ? _playerData.CriticalEnergyLossMultiplier : 1f;
+        _energyChangeMultiplier = (_energy <= _playerData.CriticalEnergyThreshold)
+            ? _playerData.CriticalEnergyLossMultiplier
+            : 1f;
     }
-    
+
     private void OnPlayerDied()
     {
         _isAlive = false;
         _energy = 0.0f;
     }
-    
+
     private void Interact()
     {
-        
+        _interactable?.Interact();
+    }
+
+    public void SetInteractable(IInteractable otherInteractable)
+    {
+        _interactable = otherInteractable;
+    }
+
+    public void RemoveInteractable(IInteractable otherInteractable)
+    {
+        if (_interactable == otherInteractable)
+        {
+            _interactable = null;
+        }
+        else
+        {
+            Debug.Log($"Tried to remove {otherInteractable}, but current interactable is {_interactable}");
+        }
     }
 }
