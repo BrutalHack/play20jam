@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: goblins_Material
   m_Shader: {fileID: 4800000, guid: b77e51f117177954ea863bdb422344fb, type: 3}
-  m_ShaderKeywords: _STRAIGHT_ALPHA_INPUT _USE8NEIGHBOURHOOD_ON
+  m_ShaderKeywords: _DOUBLE_SIDED_LIGHTING _STRAIGHT_ALPHA_INPUT _USE8NEIGHBOURHOOD_ON
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -27,7 +27,7 @@ Material:
     - _CanvasGroupCompatible: 0
     - _ColorMask: 15
     - _Cutoff: 0.1
-    - _DoubleSidedLighting: 0
+    - _DoubleSidedLighting: 1
     - _OutlineMipLevel: 0
     - _OutlineReferenceTexWidth: 1024
     - _OutlineSmoothness: 1
