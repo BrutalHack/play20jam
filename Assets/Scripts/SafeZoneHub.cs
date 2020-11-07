@@ -9,32 +9,51 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System;
+using Supyrb;
 using UnityEngine;
 
-public class SafeZoneHub: MonoBehaviour
+public class SafeZoneHub : MonoBehaviour, IInteractable
 {
-    [SerializeField]
-    private ParticleSystemForceField forceField = null;
+    [SerializeField] private ParticleSystemForceField forceField = null;
 
-    [SerializeField]
-    private SafeZoneTrigger safeZoneTrigger = null;
-    
-    [SerializeField]
-    private SafeZoneData data = null;
+    [SerializeField] private SafeZoneTrigger safeZoneTrigger = null;
 
-    [SerializeField]
-    private bool activated = false;
+    [SerializeField] private SafeZoneData data = null;
+
+    [SerializeField] private bool activated = false;
 
     public SafeZoneData Data => data;
 
-    private float engeryLeft;
+    private float energyLeft;
+    private PlayerController _playerController;
+
+    private SafeZoneActivatedSignal _safeZoneActivatedSignal;
 
     private void Awake()
     {
+        _playerController = GameObject.FindWithTag(UnityTags.Player).GetComponent<PlayerController>();
         forceField.endRange = data.Size;
         safeZoneTrigger.Initialize(this);
         safeZoneTrigger.SetRadius(data.Size);
-        engeryLeft = data.StartEnergy;
+        energyLeft = data.StartEnergy;
+
+        Signals.Get(out _safeZoneActivatedSignal);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag(UnityTags.Player))
+        {
+            _playerController.AddInteractable(this);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag(UnityTags.Player))
+        {
+            _playerController.RemoveInteractable(this);
+        }
     }
 
     private void Start()
@@ -46,5 +65,26 @@ public class SafeZoneHub: MonoBehaviour
     {
         forceField.gameObject.SetActive(active);
         safeZoneTrigger.SetActive(active);
+    }
+
+    public bool Interact()
+    {
+        if (_playerController == null || activated)
+        {
+            return false;
+        }
+
+        if (_playerController.HasWater)
+        {
+            _playerController.RemoveWater();
+            _safeZoneActivatedSignal.Dispatch();
+            SetHubActive(true);
+            return true;
+        }
+        else
+        {
+            //TODO No Water?
+            return false;
+        }
     }
 }

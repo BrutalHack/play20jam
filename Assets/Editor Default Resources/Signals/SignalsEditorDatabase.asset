@@ -29,7 +29,15 @@ MonoBehaviour:
     m_AssemblyQualifiedName: PlayerExitSafeZoneSignal, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
     m_AssemblyName: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - m_Name: SafeZoneActivatedSignal
+    m_AssemblyQualifiedName: SafeZoneActivatedSignal, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_AssemblyName: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   - m_Name: Signal
     m_AssemblyQualifiedName: Supyrb.Signal, Supyrb.Signals, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     m_AssemblyName: Supyrb.Signals, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - m_Name: WaterCollectedSignal
+    m_AssemblyQualifiedName: WaterCollectedSignal, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_AssemblyName: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null

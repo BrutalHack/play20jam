@@ -17,13 +17,16 @@ public class PlayerData: ScriptableObject
 	private float movementSpeed = 50;
 
 	[SerializeField]
+	private float lightRotationSpeed = 360f;
+
+	[SerializeField]
 	private float maxEnergy = 1f;
 
 	[SerializeField]
 	private float maxWater = 5f;
 	
 	[SerializeField]
-	private float startWater = 0f;
+	private int startWater = 0;
 
 	[SerializeField]
 	private float energyLossInFog = 0.05f;
@@ -36,11 +39,13 @@ public class PlayerData: ScriptableObject
 	
 	public float MovementSpeed => movementSpeed;
 
+	public float LightRotationSpeed => lightRotationSpeed;
+
 	public float MaxEnergy => maxEnergy;
 
 	public float MaxWater => maxWater;
 
-	public float StartWater => startWater;
+	public int StartWater => startWater;
 
 	public float EnergyLossInFog => energyLossInFog;
 
