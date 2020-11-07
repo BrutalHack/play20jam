@@ -3,118 +3,14 @@
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "torso back", "bone": "root", "attachment": "torso back" },
-	{ "name": "arm back", "bone": "root", "attachment": "arm back" },
-	{ "name": "schoulder panel back", "bone": "root", "attachment": "schoulder panel back" },
-	{ "name": "schoulder panel back light", "bone": "root", "attachment": "schoulder panel back light" },
-	{ "name": "wireback", "bone": "root", "attachment": "wireback" },
-	{ "name": "wire front", "bone": "root", "attachment": "wire front" },
-	{ "name": "neck", "bone": "root", "attachment": "neck" },
-	{ "name": "lack back", "bone": "root", "attachment": "lack back" },
-	{ "name": "leg back light", "bone": "root", "attachment": "leg back light" },
-	{ "name": "pelvis", "bone": "root", "attachment": "pelvis" },
-	{ "name": "leg", "bone": "root", "attachment": "leg" },
-	{ "name": "leg light", "bone": "root", "attachment": "leg light" },
-	{ "name": "torso", "bone": "root", "attachment": "torso" },
-	{ "name": "backbone", "bone": "root", "attachment": "backbone" },
-	{ "name": "torso light", "bone": "root", "attachment": "torso light" },
-	{ "name": "arm front", "bone": "root", "attachment": "arm front" },
-	{ "name": "solar panel front", "bone": "root", "attachment": "solar panel front" },
-	{ "name": "light", "bone": "root", "attachment": "light" },
-	{ "name": "solar panel behind glas", "bone": "root", "attachment": "solar panel behind glas" },
-	{ "name": "dirt", "bone": "root", "attachment": "dirt" },
-	{ "name": "cactus arm2", "bone": "root", "attachment": "cactus arm2" },
-	{ "name": "cactus body", "bone": "root", "attachment": "cactus body" },
-	{ "name": "cactus arm1", "bone": "root", "attachment": "cactus arm1" },
-	{ "name": "cactus flower", "bone": "root", "attachment": "cactus flower" },
-	{ "name": "glas", "bone": "root", "attachment": "glas" },
-	{ "name": "head solarpanel", "bone": "root", "attachment": "head solarpanel" },
-	{ "name": "glas light", "bone": "root", "attachment": "glas light" }
+	{ "name": "arm back botle", "bone": "root", "attachment": "arm back botle" }
 ],
 "skins": {
 	"default": {
 	},
 	"down": {
-		"torso back": {
-			"torso back": { "name": "down/torso back", "x": 1438.5, "y": -1269.5, "width": 183, "height": 109 }
-		},
-		"arm back": {
-			"arm back": { "name": "down/arm back", "x": 1584.5, "y": -1666.5, "width": 349, "height": 917 }
-		},
-		"schoulder panel back": {
-			"schoulder panel back": { "name": "down/schoulder panel back", "x": 1632, "y": -1321.5, "width": 284, "height": 311 }
-		},
-		"schoulder panel back light": {
-			"schoulder panel back light": { "name": "down/schoulder panel back light", "x": 1600, "y": -1265, "width": 82, "height": 94 }
-		},
-		"wireback": {
-			"wireback": { "name": "down/wireback", "x": 1518.5, "y": -1151.5, "width": 71, "height": 269 }
-		},
-		"wire front": {
-			"wire front": { "name": "down/wire front", "x": 1382.5, "y": -1163.5, "width": 99, "height": 263 }
-		},
-		"neck": {
-			"neck": { "name": "down/neck", "x": 1451.5, "y": -1206.5, "width": 131, "height": 343 }
-		},
-		"lack back": {
-			"lack back": { "name": "down/lack back", "x": 1545.5, "y": -2061, "width": 295, "height": 832 }
-		},
-		"leg back light": {
-			"leg back light": { "name": "down/leg back light", "x": 1590.5, "y": -2075.5, "width": 59, "height": 77 }
-		},
-		"pelvis": {
-			"pelvis": { "name": "down/pelvis", "x": 1376, "y": -1724.5, "width": 366, "height": 295 }
-		},
-		"leg": {
-			"leg": { "name": "down/leg", "x": 1239.5, "y": -2104, "width": 287, "height": 824 }
-		},
-		"leg light": {
-			"leg light": { "name": "down/leg light", "x": 1283.5, "y": -2115, "width": 61, "height": 74 }
-		},
-		"torso": {
-			"torso": { "name": "down/torso", "x": 1429.5, "y": -1437, "width": 329, "height": 414 }
-		},
-		"backbone": {
-			"backbone": { "name": "down/backbone", "x": 1410.5, "y": -1599.5, "width": 89, "height": 155 }
-		},
-		"torso light": {
-			"torso light": { "name": "down/torso light", "x": 1529.5, "y": -1327.5, "width": 43, "height": 53 }
-		},
-		"arm front": {
-			"arm front": { "name": "down/arm front", "x": 1291, "y": -1722.5, "width": 260, "height": 905 }
-		},
-		"solar panel front": {
-			"solar panel front": { "name": "down/solar panel front", "x": 1241, "y": -1348.5, "width": 386, "height": 319 }
-		},
-		"light": {
-			"light": { "name": "down/light", "x": 1311, "y": -1307.5, "width": 184, "height": 117 }
-		},
-		"solar panel behind glas": {
-			"solar panel behind glas": { "name": "down/solar panel behind glas", "x": 1561, "y": -880, "width": 200, "height": 402 }
-		},
-		"dirt": {
-			"dirt": { "name": "down/dirt", "x": 1399.5, "y": -971.5, "width": 451, "height": 277 }
-		},
-		"cactus arm2": {
-			"cactus arm2": { "name": "down/cactus arm2", "x": 1503.5, "y": -753.5, "width": 131, "height": 133 }
-		},
-		"cactus body": {
-			"cactus body": { "name": "down/cactus body", "x": 1415, "y": -787, "width": 236, "height": 308 }
-		},
-		"cactus arm1": {
-			"cactus arm1": { "name": "down/cactus arm1", "x": 1320, "y": -722.5, "width": 134, "height": 133 }
-		},
-		"cactus flower": {
-			"cactus flower": { "name": "down/cactus flower", "x": 1428.5, "y": -643, "width": 175, "height": 134 }
-		},
-		"glas": {
-			"glas": { "name": "down/glas", "x": 1463.5, "y": -827.5, "width": 601, "height": 597 }
-		},
-		"head solarpanel": {
-			"head solarpanel": { "name": "down/head solarpanel", "x": 1395, "y": -941, "width": 610, "height": 448 }
-		},
-		"glas light": {
-			"glas light": { "name": "down/glas light", "x": 1312, "y": -617.5, "width": 172, "height": 135 }
+		"arm back botle": {
+			"arm back botle": { "name": "down/arm back botle", "x": 1855, "y": -1686.5, "width": 744, "height": 833 }
 		}
 	}
 },
