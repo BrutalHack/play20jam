@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: LitSpriteTransparent
   m_Shader: {fileID: 4800000, guid: b77e51f117177954ea863bdb422344fb, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _ALPHATEST_ON _STRAIGHT_ALPHA_INPUT
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _ALPHATEST_ON _DOUBLE_SIDED_LIGHTING _STRAIGHT_ALPHA_INPUT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
@@ -66,7 +66,7 @@ Material:
     - _BumpScale: 1
     - _Cull: 0
     - _Cutoff: 0.5
-    - _DoubleSidedLighting: 0
+    - _DoubleSidedLighting: 1
     - _DstBlend: 0
     - _EnableExternalAlpha: 0
     - _EnvironmentReflections: 1

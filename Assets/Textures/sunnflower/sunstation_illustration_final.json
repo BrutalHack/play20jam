@@ -1,0 +1,108 @@
+{ "skeleton": { "images": "D:/Unity Projects/play20jam/Assets/Textures/sunnflower/Spine/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "leaf back", "bone": "root", "attachment": "leaf back" },
+	{ "name": "tentacle back right", "bone": "root", "attachment": "tentacle back right" },
+	{ "name": "lightBackRight", "bone": "root", "attachment": "lightBackRight" },
+	{ "name": "tentacle back left", "bone": "root", "attachment": "tentacle back left" },
+	{ "name": "lightBackLeft", "bone": "root", "attachment": "lightBackLeft" },
+	{ "name": "leaf left back", "bone": "root", "attachment": "leaf left back" },
+	{ "name": "leaf right back", "bone": "root", "attachment": "leaf right back" },
+	{ "name": "bubble5", "bone": "root", "attachment": "bubble5" },
+	{ "name": "bubble4", "bone": "root", "attachment": "bubble4" },
+	{ "name": "bubble3", "bone": "root", "attachment": "bubble3" },
+	{ "name": "bubble2", "bone": "root", "attachment": "bubble2" },
+	{ "name": "bubble1", "bone": "root", "attachment": "bubble1" },
+	{ "name": "glas", "bone": "root", "attachment": "glas" },
+	{ "name": "leaf right front", "bone": "root", "attachment": "leaf right front" },
+	{ "name": "leaf left front", "bone": "root", "attachment": "leaf left front" },
+	{ "name": "tentacle front right", "bone": "root", "attachment": "tentacle front right" },
+	{ "name": "lightFrontRight", "bone": "root", "attachment": "lightFrontRight" },
+	{ "name": "tentacle front left", "bone": "root", "attachment": "tentacle front left" },
+	{ "name": "lightFrontLeft", "bone": "root", "attachment": "lightFrontLeft" },
+	{ "name": "leaf front", "bone": "root", "attachment": "leaf front" },
+	{ "name": "lightFront", "bone": "root", "attachment": "lightFront" },
+	{ "name": "left", "bone": "root", "attachment": "left" },
+	{ "name": "right", "bone": "root", "attachment": "right" },
+	{ "name": "front", "bone": "root", "attachment": "front" }
+],
+"skins": {
+	"default": {
+		"leaf back": {
+			"leaf back": { "x": 1487.5, "y": -1932.5, "width": 555, "height": 237 }
+		},
+		"tentacle back right": {
+			"tentacle back right": { "x": 1829.5, "y": -1768.5, "width": 375, "height": 385 }
+		},
+		"lightBackRight": {
+			"lightBackRight": { "x": 1926, "y": -1624.5, "width": 160, "height": 97 }
+		},
+		"tentacle back left": {
+			"tentacle back left": { "x": 1188.5, "y": -1778, "width": 375, "height": 384 }
+		},
+		"lightBackLeft": {
+			"lightBackLeft": { "x": 1090, "y": -1626, "width": 160, "height": 80 }
+		},
+		"leaf left back": {
+			"leaf left back": { "x": 1070.5, "y": -1948.5, "width": 435, "height": 219 }
+		},
+		"leaf right back": {
+			"leaf right back": { "x": 1924.5, "y": -1927.5, "width": 435, "height": 219 }
+		},
+		"bubble5": {
+			"bubble5": { "x": 1385.5, "y": -1717, "width": 89, "height": 86 }
+		},
+		"bubble4": {
+			"bubble4": { "x": 1444, "y": -1892.5, "width": 132, "height": 127 }
+		},
+		"bubble3": {
+			"bubble3": { "x": 1580.5, "y": -1724, "width": 89, "height": 86 }
+		},
+		"bubble2": {
+			"bubble2": { "x": 1642, "y": -1889, "width": 58, "height": 56 }
+		},
+		"bubble1": {
+			"bubble1": { "x": 1488.5, "y": -1635.5, "width": 49, "height": 47 }
+		},
+		"glas": {
+			"glas": { "x": 1495, "y": -1808, "width": 490, "height": 472 }
+		},
+		"leaf right front": {
+			"leaf right front": { "x": 1905.5, "y": -1965, "width": 501, "height": 192 }
+		},
+		"leaf left front": {
+			"leaf left front": { "x": 1103.5, "y": -1997, "width": 501, "height": 192 }
+		},
+		"tentacle front right": {
+			"tentacle front right": { "x": 1885.5, "y": -2036.5, "width": 457, "height": 263 }
+		},
+		"lightFrontRight": {
+			"lightFrontRight": { "x": 2075, "y": -2023, "width": 78, "height": 164 }
+		},
+		"tentacle front left": {
+			"tentacle front left": { "x": 1117.5, "y": -2061.5, "width": 457, "height": 263 }
+		},
+		"lightFrontLeft": {
+			"lightFrontLeft": { "x": 928, "y": -2041, "width": 78, "height": 150 }
+		},
+		"leaf front": {
+			"leaf front": { "x": 1490, "y": -2093, "width": 602, "height": 382 }
+		},
+		"lightFront": {
+			"lightFront": { "x": 1539.5, "y": -2043.5, "width": 55, "height": 57 }
+		},
+		"left": {
+			"left": { "x": 1334, "y": -1811.5, "width": 292, "height": 543 }
+		},
+		"right": {
+			"right": { "x": 1667, "y": -1807.5, "width": 292, "height": 543 }
+		},
+		"front": {
+			"front": { "x": 1496, "y": -1798, "width": 530, "height": 612 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

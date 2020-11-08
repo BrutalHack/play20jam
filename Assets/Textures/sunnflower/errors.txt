@@ -1,0 +1,15 @@
+Multiple layers for the "default" skin have the same name:
+light
+Rename or use the [ignore] tag for the other layers.
+---
+Multiple layers for the "default" skin have the same name:
+light
+Rename or use the [ignore] tag for the other layers.
+---
+Multiple layers for the "default" skin have the same name:
+light
+Rename or use the [ignore] tag for the other layers.
+---
+Multiple layers for the "default" skin have the same name:
+light
+Rename or use the [ignore] tag for the other layers.

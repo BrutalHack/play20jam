@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &927811646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 927811647}
+  - component: {fileID: 927811648}
+  m_Layer: 9
+  m_Name: LowFogDecimatorFar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &927811647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927811646}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 3.32, z: 15.78}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2032113509}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &927811648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927811646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd8fc90d824417682785d69241bcd5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSys: {fileID: 2120751765}
+  particleLifetimeChange: 0
+  particleAlphaChange:
+    serializedVersion: 2
+    rgba: 536870911
+  range: 8
 --- !u!1 &1055118360
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,7 +75,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055118360}
   m_LocalRotation: {x: -0.18301436, y: -0.6830123, z: -0.6830123, w: 0.18301436}
-  m_LocalPosition: {x: 0.63, y: 6, z: 6}
+  m_LocalPosition: {x: 0.63, y: 0, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 24990060678533570}
@@ -284,8 +333,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 12
-      minScalar: 5
+      scalar: 0.3
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -659,7 +708,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 10
+    type: 2
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -667,7 +716,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
+    m_Scale: {x: 1, y: 1, z: 0.3}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -865,7 +914,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -2346,7 +2395,7 @@ ParticleSystem:
     randomizePerFrame: 0
   ExternalForcesModule:
     serializedVersion: 2
-    enabled: 1
+    enabled: 0
     multiplierCurve:
       serializedVersion: 2
       minMaxState: 0
@@ -4766,7 +4815,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6c9f240e7cad2e4e85ed897cce88850, type: 2}
+  - {fileID: 2100000, guid: 0d07ffef285b7634596f0c87cd79b810, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4823,13 +4872,13 @@ GameObject:
   - component: {fileID: 1066758497}
   - component: {fileID: 1066758496}
   - component: {fileID: 1066758495}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fog_Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1066758497
 Transform:
   m_ObjectHideFlags: 0
@@ -9637,7 +9686,7 @@ GameObject:
   - component: {fileID: 1162481676}
   - component: {fileID: 1162481675}
   - component: {fileID: 1162481678}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9789,7 +9838,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373245095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 8.42}
+  m_LocalPosition: {x: -0, y: -0.14, z: 4.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2032113509}
@@ -9808,8 +9857,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSys: {fileID: 2120751765}
-  particleLifetimeChange: -20
-  range: 3
+  particleLifetimeChange: -5
+  particleAlphaChange:
+    serializedVersion: 2
+    rgba: 536870911
+  range: 6
 --- !u!1 &1711883478
 GameObject:
   m_ObjectHideFlags: 0
@@ -9883,6 +9935,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1373245096}
+  - {fileID: 927811647}
   m_Father: {fileID: 1987520372069048034}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 27.308, y: 5.127, z: 0.06}
@@ -9940,7 +9993,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -9958,7 +10011,7 @@ GameObject:
   - component: {fileID: 2120751766}
   - component: {fileID: 2120751765}
   - component: {fileID: 2120751764}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fog_Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9973,7 +10026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120751763}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.02, y: 0.57000005, z: -0.83}
+  m_LocalPosition: {x: 0.02, y: 6.17, z: -0.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 24990060678533570}
@@ -10231,8 +10284,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 8
-      minScalar: 3
+      scalar: 15
+      minScalar: 7
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -10547,7 +10600,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 5000
+    maxNumParticles: 2000
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -10812,7 +10865,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 500
+      scalar: 300
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -14735,7 +14788,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
-  m_SortMode: 0
+  m_SortMode: 2
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
