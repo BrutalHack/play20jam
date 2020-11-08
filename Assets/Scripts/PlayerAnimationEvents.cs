@@ -9,23 +9,30 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using FMODUnity;
+using JetBrains.Annotations;
 using UnityEngine;
 
-public class PlayerAnimationEvents: MonoBehaviour
+public class PlayerAnimationEvents : MonoBehaviour
 {
-	[SerializeField]
-	private StudioEventEmitter footStepSound = null;
+    [SerializeField] private StudioEventEmitter footStepSound = null;
 
-	[SerializeField]
-	private StudioEventEmitter idleSound = null;
-	
-	public void PlayFootStepSound()
-	{
-		footStepSound.Play();
-	}
+    [SerializeField] private StudioEventEmitter idleSound = null;
 
-	public void PlayIdleSound()
-	{
-		idleSound.Play();
-	}
+    [UsedImplicitly]
+    public void PlayFootStepSound()
+    {
+        footStepSound.Play();
+    }
+
+    [UsedImplicitly]
+    public void PlayIdleSound()
+    {
+        idleSound.Play();
+    }
+
+    [UsedImplicitly]
+    public void ExitInteractingState()
+    {
+        PlayerController.Instance.ExitInteractingState();
+    }
 }

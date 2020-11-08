@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using JetBrains.Annotations;
 using Supyrb;
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
     private bool _isVictoryState;
     private bool _isGameOverState;
     private static PlayerController _instance;
+    private bool _isInteracting;
 
     public static PlayerController Instance
     {
@@ -68,7 +70,7 @@ public class PlayerController : MonoBehaviour
         Signals.Get(out _victorySignal);
         Signals.Get(out _playerEnergyLevelChangedSignal);
         Signals.Get(out _waterCollectedSignal);
-        
+
         _enterSafeZoneSignal.AddListener(OnEnterSafeZone);
         _exitSafeZoneSignal.AddListener(OnExitSafeZone);
         _playerEnergyLevelChangedSignal.AddListener(OnEnergyLevelChanged);
@@ -111,17 +113,17 @@ public class PlayerController : MonoBehaviour
         forward.z = _moveVector.y;
 
         var isWalking = forward.sqrMagnitude > 0.05f;
-        
+
         // TODO Why is the hash not working???
         _anim.SetBool(_animWalking.Name, isWalking);
-        
+
         if (isWalking)
         {
             // Flip if appropriate
             var scale = _anim.transform.localScale;
             scale.x = Mathf.Sign(forward.x + scale.x * 0.01f);
             _anim.transform.localScale = scale;
-            
+
             var targetRotation = Quaternion.LookRotation(forward);
             lookRotation.rotation = Quaternion.RotateTowards(lookRotation.rotation, targetRotation,
                 _playerData.LightRotationSpeed * Time.deltaTime);
@@ -158,6 +160,11 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateMovement()
     {
+        if (_isInteracting)
+        {
+            return;
+        }
+
         var moveDelta = _moveVector * (_playerData.MovementSpeed * Time.deltaTime);
         _rigidbody.velocity += new Vector3(moveDelta.x, 0, moveDelta.y);
     }
@@ -250,6 +257,11 @@ public class PlayerController : MonoBehaviour
 
     private void Interact()
     {
+        if (_isInteracting || !_isAlive)
+        {
+            return;
+        }
+
         var interactedObjects = new List<IInteractable>();
         foreach (var interactable in _interactables)
         {
@@ -270,7 +282,17 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (interactedObjects.Any())
+        {
+            _isInteracting = true;
+        }
+
         _interactables.RemoveAll(interactedObjects.Contains);
+    }
+
+    public void ExitInteractingState()
+    {
+        _isInteracting = false;
     }
 
     public void AddInteractable(IInteractable otherInteractable)

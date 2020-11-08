@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d5751a2c961df945a34295ccf5e576d, type: 3}
-  m_Name: PlantWall Brush
+  m_Name: Plant1 Brush
   m_EditorClassIdentifier: 
   m_Cells:
   - m_Tile: {fileID: 0}
@@ -36,4 +36,4 @@ MonoBehaviour:
   m_Pivot: {x: 0, y: 0, z: 0}
   m_CanChangeZPosition: 0
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Prefab: {fileID: 5555747229926415665, guid: 5adaf05a90a5944a8a5e624c20cc3141, type: 3}
+  m_Prefab: {fileID: 4487680668123085193, guid: 03932775430aa430b8a1605242c091ba, type: 3}
