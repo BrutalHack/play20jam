@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -248,9 +249,16 @@ public class PlayerController : MonoBehaviour
     private void OnVictory()
     {
         _isAlive = false;
-        _isVictoryState = true;
+        StartCoroutine(ActivateVictoryState());
         StopFog();
     }
+
+    private IEnumerator ActivateVictoryState()
+    {
+        yield return new WaitForSeconds(6f);
+        _isVictoryState = true;
+    }
+
 
     private void StopFog()
     {
