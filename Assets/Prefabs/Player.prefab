@@ -15323,6 +15323,8 @@ MonoBehaviour:
     name: pickup
   _animUseWater:
     name: use_water
+  _animVictory:
+    name: victory
   _energy: 0
   _water: 0
 --- !u!54 &1292196986

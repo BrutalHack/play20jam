@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ShaderParameter _animDie = null;
     [SerializeField] private ShaderParameter _animPickup = null;
     [SerializeField] private ShaderParameter _animUseWater = null;
+    [SerializeField] private ShaderParameter _animVictory = null;
 
     [SerializeField] private float _energy;
     [SerializeField] private int _water;
@@ -249,6 +250,7 @@ public class PlayerController : MonoBehaviour
     private void OnVictory()
     {
         _isAlive = false;
+        _anim.SetTrigger(_animVictory.Name);
         StartCoroutine(ActivateVictoryState());
         StopFog();
     }
