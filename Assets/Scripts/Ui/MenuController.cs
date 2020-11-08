@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,7 +7,9 @@ namespace Ui
     public class MenuController : MonoBehaviour
     {
         private FMOD.Studio.Bus _masterBus;
-        [SerializeField] private string _masterBusString = "Bus:/";
+        
+        [SerializeField] 
+        private string _masterBusString = "Bus:/";
 
         private void Start()
         {
