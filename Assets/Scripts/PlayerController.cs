@@ -87,6 +87,10 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        // Well not the best place to put it, but well...
+        Signals.Get<GameSceneSignal>().Dispatch();
+        
+        
         _isAlive = true;
         _energy = _playerData.MaxEnergy;
         _water = _playerData.StartWater;

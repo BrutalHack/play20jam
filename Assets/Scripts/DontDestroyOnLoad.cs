@@ -10,7 +10,7 @@
 
 using UnityEngine;
 
-public class Audio: MonoBehaviour
+public class DontDestroyOnLoad: MonoBehaviour
 {
 	private void Awake()
 	{
