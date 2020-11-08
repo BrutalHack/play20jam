@@ -99,6 +99,12 @@
 	</object>
 	<object class="MixerBusPanner" id="{b8f13984-5b57-4ef6-bcfe-73676ba91472}" />
 	<object class="MultiSound" id="{e66fe69e-3e63-4ff9-94b6-8db9971204f2}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>7</value>
+		</property>
 		<property name="length">
 			<value>2.015079365079365</value>
 		</property>
