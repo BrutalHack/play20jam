@@ -43,7 +43,7 @@ public class SafeZoneHub : MonoBehaviour, IInteractable
     private void Awake()
     {
         _playerController = PlayerController.Instance;
-        forceField.endRange = data.Size;
+        //forceField.endRange = data.Size;
         safeZoneTrigger.Initialize(this);
         safeZoneTrigger.SetRadius(data.Size);
         energyLeft = data.StartEnergy;
