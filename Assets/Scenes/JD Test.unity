@@ -424,6 +424,14 @@ PrefabInstance:
       propertyPath: activated
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6163359974230128197, guid: 4e8215516898e4b23af55e566dca45fb, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426975183350654531, guid: 4e8215516898e4b23af55e566dca45fb, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8677036491545435684, guid: 4e8215516898e4b23af55e566dca45fb, type: 3}
       propertyPath: m_Name
       value: Grid
@@ -471,6 +479,10 @@ PrefabInstance:
     - target: {fileID: 8677036491545435690, guid: 4e8215516898e4b23af55e566dca45fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211912349269446111, guid: 4e8215516898e4b23af55e566dca45fb, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e8215516898e4b23af55e566dca45fb, type: 3}
