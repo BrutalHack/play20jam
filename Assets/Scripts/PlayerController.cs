@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        _surroundingEnergy = _playerData.EnergyLossInFog;
+        _surroundingEnergy = -_playerData.EnergyLossInFog;
 
         Signals.Get(out _enterSafeZoneSignal);
         Signals.Get(out _exitSafeZoneSignal);

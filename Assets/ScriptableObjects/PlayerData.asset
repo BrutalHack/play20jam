@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 386a7fc6332f4bf2818e87146458a616, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  movementSpeed: 50
+  movementSpeed: 30
+  lightRotationSpeed: 360
   maxEnergy: 1
   maxWater: 5
   startWater: 0
-  energyLossInFog: 0.05
+  energyLossInFog: 0.03
   criticalEnergyThreshold: 0.3
   criticalEnergyLossMultiplier: 0.7
