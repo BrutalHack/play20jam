@@ -17,8 +17,11 @@ public class ParticleTrigger : MonoBehaviour
 
 	[SerializeField]
 	private float particleLifetimeChange = -2f;
-		
-	[SerializeField]
+
+    [SerializeField]
+    private Color32 particleAlphaChange = new Color32(255,255,255,255);
+
+    [SerializeField]
 	private float range = 5f;
 
 	private ParticleSystem.Particle[] particles;
@@ -50,6 +53,7 @@ public class ParticleTrigger : MonoBehaviour
 			}
 
 			particle.remainingLifetime += particleLifetimeChange * Time.deltaTime;
+            particle.color = particleAlphaChange;
 			particles[particleCounter++] = particle;
 		}
 
