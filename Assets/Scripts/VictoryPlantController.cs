@@ -8,6 +8,9 @@ public class VictoryPlantController : MonoBehaviour, IInteractable
     private Animator anim = null;
 
     [SerializeField]
+    private Animator SpineAnim = null;
+
+    [SerializeField]
     private ShaderParameter active = null;
     
     private VictorySignal _victorySignal;
@@ -56,6 +59,7 @@ public class VictoryPlantController : MonoBehaviour, IInteractable
         }
 
         anim.SetTrigger(active.Name);
+        SpineAnim.SetTrigger(active.Name);
         _playerController.RemoveWater();
         _victorySignal.Dispatch();
         return true;
