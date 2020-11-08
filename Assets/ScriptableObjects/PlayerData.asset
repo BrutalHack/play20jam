@@ -19,4 +19,4 @@ MonoBehaviour:
   startWater: 0
   energyLossInFog: 0.03
   criticalEnergyThreshold: 0.3
-  criticalEnergyLossMultiplier: 0.7
+  criticalEnergyLossMultiplier: 0

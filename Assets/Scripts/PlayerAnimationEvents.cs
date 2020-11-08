@@ -16,8 +16,16 @@ public class PlayerAnimationEvents: MonoBehaviour
 	[SerializeField]
 	private StudioEventEmitter footStepSound = null;
 
+	[SerializeField]
+	private StudioEventEmitter idleSound = null;
+	
 	public void PlayFootStepSound()
 	{
 		footStepSound.Play();
+	}
+
+	public void PlayIdleSound()
+	{
+		idleSound.Play();
 	}
 }
