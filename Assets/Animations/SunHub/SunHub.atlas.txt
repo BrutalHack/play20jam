@@ -1,0 +1,174 @@
+
+SunHub.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bubble1
+  rotate: false
+  xy: 76, 201
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+bubble2
+  rotate: true
+  xy: 148, 217
+  size: 15, 14
+  orig: 15, 14
+  offset: 0, 0
+  index: -1
+bubble3
+  rotate: false
+  xy: 136, 70
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+bubble5
+  rotate: false
+  xy: 136, 70
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+bubble4
+  rotate: false
+  xy: 203, 62
+  size: 33, 32
+  orig: 33, 32
+  offset: 0, 0
+  index: -1
+front
+  rotate: false
+  xy: 2, 353
+  size: 133, 151
+  orig: 133, 153
+  offset: 0, 0
+  index: -1
+glas
+  rotate: true
+  xy: 137, 381
+  size: 123, 118
+  orig: 123, 118
+  offset: 0, 0
+  index: -1
+leaf back
+  rotate: true
+  xy: 2, 59
+  size: 139, 59
+  orig: 139, 59
+  offset: 0, 0
+  index: -1
+leaf front
+  rotate: true
+  xy: 2, 200
+  size: 151, 72
+  orig: 151, 96
+  offset: 0, 24
+  index: -1
+leaf left back
+  rotate: false
+  xy: 2, 2
+  size: 101, 55
+  orig: 109, 55
+  offset: 8, 0
+  index: -1
+leaf left front
+  rotate: true
+  xy: 136, 94
+  size: 119, 48
+  orig: 125, 48
+  offset: 6, 0
+  index: -1
+leaf right back
+  rotate: false
+  xy: 105, 5
+  size: 100, 55
+  orig: 109, 55
+  offset: 0, 0
+  index: -1
+leaf right front
+  rotate: true
+  xy: 148, 234
+  size: 119, 48
+  orig: 125, 48
+  offset: 0, 0
+  index: -1
+left
+  rotate: false
+  xy: 63, 62
+  size: 71, 136
+  orig: 73, 136
+  offset: 0, 0
+  index: -1
+lightBackLeft
+  rotate: false
+  xy: 179, 359
+  size: 40, 20
+  orig: 40, 20
+  offset: 0, 0
+  index: -1
+lightBackRight
+  rotate: false
+  xy: 137, 355
+  size: 40, 24
+  orig: 40, 24
+  offset: 0, 0
+  index: -1
+lightFront
+  rotate: false
+  xy: 164, 218
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+lightFrontLeft
+  rotate: true
+  xy: 186, 96
+  size: 20, 38
+  orig: 20, 38
+  offset: 0, 0
+  index: -1
+lightFrontRight
+  rotate: true
+  xy: 160, 72
+  size: 20, 41
+  orig: 20, 41
+  offset: 0, 0
+  index: -1
+right
+  rotate: false
+  xy: 76, 215
+  size: 70, 136
+  orig: 73, 136
+  offset: 3, 0
+  index: -1
+tentacle back left
+  rotate: false
+  xy: 198, 261
+  size: 94, 96
+  orig: 94, 96
+  offset: 0, 0
+  index: -1
+tentacle back right
+  rotate: false
+  xy: 254, 163
+  size: 94, 96
+  orig: 94, 96
+  offset: 0, 0
+  index: -1
+tentacle front left
+  rotate: true
+  xy: 186, 118
+  size: 114, 66
+  orig: 114, 66
+  offset: 0, 0
+  index: -1
+tentacle front right
+  rotate: true
+  xy: 238, 2
+  size: 114, 66
+  orig: 114, 66
+  offset: 0, 0
+  index: -1

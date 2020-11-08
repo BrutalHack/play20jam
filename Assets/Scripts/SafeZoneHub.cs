@@ -22,6 +22,8 @@ public class SafeZoneHub : MonoBehaviour, IInteractable
 
     [SerializeField] private Animator animator = null;
 
+    [SerializeField] private Animator Spineanimator = null;
+
     [SerializeField] private ShaderParameter activeParam = null; 
     
     [SerializeField] private bool activated = false;
@@ -75,6 +77,7 @@ public class SafeZoneHub : MonoBehaviour, IInteractable
         forceField.gameObject.SetActive(active);
         safeZoneTrigger.SetActive(active);
         animator.SetBool(activeParam.Name, active);
+        Spineanimator.SetBool(activeParam.Name, active);
     }
 
     public bool Interact()
