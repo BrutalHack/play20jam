@@ -9882,6 +9882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   footStepSound: {fileID: 418557500}
+  idleSound: {fileID: 1278697059309600022}
 --- !u!1 &1373245095
 GameObject:
   m_ObjectHideFlags: 0
