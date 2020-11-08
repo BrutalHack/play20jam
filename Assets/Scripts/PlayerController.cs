@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using FMODUnity;
 using JetBrains.Annotations;
 using Supyrb;
 using UnityEngine;
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ShaderParameter _animUseWater = null;
     [SerializeField] private ShaderParameter _animVictory = null;
 
+    [SerializeField]
+    private StudioEventEmitter enterSafeZoneSound = null;
     [SerializeField] private float _energy;
     [SerializeField] private int _water;
     private Vector2 _moveVector;
@@ -220,6 +223,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnterSafeZone(SafeZoneHub hub)
     {
+        enterSafeZoneSound.Play();
         _surroundingEnergy = hub.Data.EmittingEnergy;
         Debug.Log("Entered safe zone");
     }

@@ -9,6 +9,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System;
+using FMODUnity;
 using Supyrb;
 using UnityEngine;
 
@@ -27,6 +28,9 @@ public class SafeZoneHub : MonoBehaviour, IInteractable
     [SerializeField] private ShaderParameter activeParam = null; 
     
     [SerializeField] private bool activated = false;
+
+    [SerializeField]
+    private StudioEventEmitter activationSound = null;
 
     public SafeZoneData Data => data;
 
@@ -78,6 +82,11 @@ public class SafeZoneHub : MonoBehaviour, IInteractable
         safeZoneTrigger.SetActive(active);
         animator.SetBool(activeParam.Name, active);
         Spineanimator.SetBool(activeParam.Name, active);
+
+        if (active)
+        {
+            activationSound.Play();
+        }
     }
 
     public bool Interact()

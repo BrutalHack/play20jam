@@ -17,6 +17,6 @@ MonoBehaviour:
   maxEnergy: 1
   maxWater: 5
   startWater: 0
-  energyLossInFog: 0.03
+  energyLossInFog: 0.025
   criticalEnergyThreshold: 0.3
   criticalEnergyLossMultiplier: 0.7
