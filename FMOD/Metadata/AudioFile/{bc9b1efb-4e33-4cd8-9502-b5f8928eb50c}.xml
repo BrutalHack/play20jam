@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{bc9b1efb-4e33-4cd8-9502-b5f8928eb50c}">
+		<property name="assetPath">
+			<value>Play20_SFX_IdleSound_v2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.0770068027210886</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d426b360-28f8-42b8-a998-fb72eefea2ae}</destination>
+		</relationship>
+	</object>
+</objects>
