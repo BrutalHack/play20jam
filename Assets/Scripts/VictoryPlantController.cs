@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class VictoryPlantController : MonoBehaviour, IInteractable
 {
+    [SerializeField]
+    private Animator anim = null;
+
+    [SerializeField]
+    private ShaderParameter active = null;
+    
     private VictorySignal _victorySignal;
     private PlayerController _playerController;
 
@@ -49,6 +55,7 @@ public class VictoryPlantController : MonoBehaviour, IInteractable
             return false;
         }
 
+        anim.SetTrigger(active.Name);
         _playerController.RemoveWater();
         _victorySignal.Dispatch();
         return true;
