@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -87,6 +88,10 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        // Well not the best place to put it, but well...
+        Signals.Get<GameSceneSignal>().Dispatch();
+        
+        
         _isAlive = true;
         _energy = _playerData.MaxEnergy;
         _water = _playerData.StartWater;
@@ -244,9 +249,16 @@ public class PlayerController : MonoBehaviour
     private void OnVictory()
     {
         _isAlive = false;
-        _isVictoryState = true;
+        StartCoroutine(ActivateVictoryState());
         StopFog();
     }
+
+    private IEnumerator ActivateVictoryState()
+    {
+        yield return new WaitForSeconds(6f);
+        _isVictoryState = true;
+    }
+
 
     private void StopFog()
     {

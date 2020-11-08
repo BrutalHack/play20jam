@@ -13,6 +13,14 @@ MonoBehaviour:
   m_Name: SignalsEditorDatabase
   m_EditorClassIdentifier: 
   signalTypes:
+  - m_Name: GameSceneSignal
+    m_AssemblyQualifiedName: GameSceneSignal, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_AssemblyName: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - m_Name: MenuSceneSignal
+    m_AssemblyQualifiedName: MenuSceneSignal, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_AssemblyName: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   - m_Name: PlantWallDestroyedSignal
     m_AssemblyQualifiedName: PlantWallDestroyedSignal, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
