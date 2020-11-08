@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a295922797c543fab23355d75d8c9468, type: 3}
   m_Name: DefaultSafeZoneData
   m_EditorClassIdentifier: 
-  size: 7
-  lightPower: 60
+  size: 10
+  startEnergy: 60
   requiredWater: 0.4
+  emittingEnergy: 0.3

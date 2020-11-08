@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 8761041778934801577}
   - component: {fileID: 1955546889144024977}
   - component: {fileID: 8972061206153403813}
+  - component: {fileID: 7014360212288976809}
   m_Layer: 0
   m_Name: VictoryPlant
   m_TagString: Untagged
@@ -153,3 +154,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 545ed06c4f1943c0b2916a4b641d3460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 7014360212288976809}
+  active:
+    name: Active
+--- !u!95 &7014360212288976809
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8624457119052417841}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e51f4fc67edbdaf47904cf187bec10fc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
