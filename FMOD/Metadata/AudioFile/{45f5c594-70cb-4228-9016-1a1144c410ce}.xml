@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{45f5c594-70cb-4228-9016-1a1144c410ce}">
+		<property name="assetPath">
+			<value>Play20_SFX_Movement_v2-002.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.9820861678004535</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d426b360-28f8-42b8-a998-fb72eefea2ae}</destination>
+		</relationship>
+	</object>
+</objects>
