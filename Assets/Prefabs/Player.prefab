@@ -9847,7 +9847,7 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
-  _animationName: idle_front
+  _animationName: start_idle
   loop: 1
   timeScale: 1
 --- !u!95 &1162481678
@@ -9882,7 +9882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   footStepSound: {fileID: 418557500}
-  idleSound: {fileID: 1278697059309600022}
+  idleSound: {fileID: 0}
 --- !u!1 &1373245095
 GameObject:
   m_ObjectHideFlags: 0
