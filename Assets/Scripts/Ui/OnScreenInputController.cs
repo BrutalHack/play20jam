@@ -14,7 +14,7 @@ namespace Ui
             else
             {
                 Debug.Log("I can has no touch");
-                this.gameObject.SetActive(false);
+                gameObject.SetActive(false);
             }
         } 
     }

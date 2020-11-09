@@ -180,8 +180,12 @@ public class PlayerController : MonoBehaviour
     [UsedImplicitly]
     public void OnMove(InputAction.CallbackContext context)
     {
-        Debug.Log(context.phase + context.ReadValue<Vector2>().ToString());
-        if (context.started || context.canceled)
+        if (Touchscreen.current != null && Touchscreen.current.enabled && context.canceled)
+        {
+            return;
+        }
+
+        if (context.started)
         {
             return;
         }
