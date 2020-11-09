@@ -40,7 +40,7 @@ public class WaterController : MonoBehaviour, IInteractable
 
     public bool Interact()
     {
-        if (_playerController == null)
+        if (_playerController == null || _playerController.HasWater)
         {
             return false;
         }
