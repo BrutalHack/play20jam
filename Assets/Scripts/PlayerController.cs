@@ -27,11 +27,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ShaderParameter _animUseWater = null;
     [SerializeField] private ShaderParameter _animVictory = null;
 
-    [SerializeField]
-    private StudioEventEmitter enterSafeZoneSound = null;
+    [SerializeField] private StudioEventEmitter enterSafeZoneSound = null;
     [SerializeField] private float _energy;
     [SerializeField] private int _water;
-    private Vector2 _moveVector;
+    [SerializeField] private Vector2 _moveVector;
     private Vector3 forward = Vector3.forward;
     private Rigidbody _rigidbody;
 
@@ -94,8 +93,8 @@ public class PlayerController : MonoBehaviour
     {
         // Well not the best place to put it, but well...
         Signals.Get<GameSceneSignal>().Dispatch();
-        
-        
+
+
         _isAlive = true;
         _energy = _playerData.MaxEnergy;
         _water = _playerData.StartWater;
@@ -181,7 +180,8 @@ public class PlayerController : MonoBehaviour
     [UsedImplicitly]
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (context.started)
+        Debug.Log(context.phase + context.ReadValue<Vector2>().ToString());
+        if (context.started || context.canceled)
         {
             return;
         }
@@ -197,6 +197,11 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        ExecuteAction();
+    }
+
+    public void ExecuteAction()
+    {
         if (_isVictoryState)
         {
             SceneManager.LoadScene(UnitySceneIndices.Menu);
@@ -330,5 +335,10 @@ public class PlayerController : MonoBehaviour
     {
         _anim.SetBool(_animHasWater.Name, false);
         _water = 0;
+    }
+
+    public void StopMovement()
+    {
+        _moveVector = Vector2.zero;
     }
 }
