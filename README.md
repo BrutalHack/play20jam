@@ -4,8 +4,8 @@
 
 [![Unity 2020.1.11](https://img.shields.io/badge/unity-2020.1.11-green.svg?logo=unity&cacheSeconds=2592000)](unityhub://2020.1.11f1/698c1113cef0) [![URP Render Pipeline 8.2](https://img.shields.io/badge/pipeline-URP8.2-blue)](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@8.2/manual/index.html)  
 
-[Itch.io Game site](https://brutalhack.itch.io/plant-stranding)
-
+* [Itch.io Game site](https://brutalhack.itch.io/plant-stranding)
+* [OddNina Twitch Gameplay](https://clips.twitch.tv/ProtectiveUnsightlyToadSquadGoals)
 
 
 ## External Libraries
