@@ -2,6 +2,7 @@ using System;
 using Supyrb;
 using UnityEngine;
 using System.Collections;
+using FMODUnity;
 
 public class WaterController : MonoBehaviour, IInteractable
 {
@@ -10,6 +11,9 @@ public class WaterController : MonoBehaviour, IInteractable
 
     [SerializeField]
     private float timer = 1.0f;
+
+    [SerializeField]
+    private StudioEventEmitter pickupSound = null;
 
     public InteractionType Type
     {
@@ -57,6 +61,7 @@ public class WaterController : MonoBehaviour, IInteractable
     IEnumerator waitForTimer()
     {
         yield return new WaitForSeconds(timer);
+        pickupSound.Play();
         gameObject.SetActive(false);
     }
 }
