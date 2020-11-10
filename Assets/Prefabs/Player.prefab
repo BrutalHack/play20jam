@@ -9882,7 +9882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   footStepSound: {fileID: 418557500}
-  idleSound: {fileID: 0}
+  idleSound: {fileID: 1278697059309600022}
 --- !u!1 &1373245095
 GameObject:
   m_ObjectHideFlags: 0
@@ -15383,6 +15383,7 @@ MonoBehaviour:
   enterSafeZoneSound: {fileID: 5037540366806370089}
   _energy: 0
   _water: 0
+  _moveVector: {x: 0, y: 0}
 --- !u!54 &1292196986
 Rigidbody:
   m_ObjectHideFlags: 0
