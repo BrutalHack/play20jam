@@ -1,11 +1,15 @@
 using System;
 using Supyrb;
 using UnityEngine;
+using System.Collections;
 
 public class WaterController : MonoBehaviour, IInteractable
 {
     private WaterCollectedSignal _waterCollectedSignal;
     private PlayerController _playerController;
+
+    [SerializeField]
+    private float timer = 1.0f;
 
     public InteractionType Type
     {
@@ -46,7 +50,13 @@ public class WaterController : MonoBehaviour, IInteractable
         }
         
         _waterCollectedSignal.Dispatch();
-        gameObject.SetActive(false);
+        StartCoroutine(waitForTimer());
         return true;
+    }
+
+    IEnumerator waitForTimer()
+    {
+        yield return new WaitForSeconds(timer);
+        gameObject.SetActive(false);
     }
 }
